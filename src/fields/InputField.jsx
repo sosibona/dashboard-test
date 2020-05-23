@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Field, ErrorMessage } from "formik";
 import TextField from "@material-ui/core/TextField";
-import Test from "./ErrorField";
+import ErrorField from "./ErrorField";
 
 const InputField = ({ label, name, type, className }) => {
   return (
@@ -16,7 +16,7 @@ const InputField = ({ label, name, type, className }) => {
         variant="outlined"
         className={className}
       />
-      <ErrorMessage name={name} component={Test} />
+      <ErrorMessage name={name} component={ErrorField} />
     </div>
   );
 };

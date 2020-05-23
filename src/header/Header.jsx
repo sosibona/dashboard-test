@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import user from "./img/user_default.png";
+import user from "../img/user_default.png";
 
 const Header = ({ userData }) => {
   return (
@@ -10,11 +10,13 @@ const Header = ({ userData }) => {
         <span className="user__name">
           Hello, {userData ? userData.name : "Guest"}
         </span>
-        <img
-          className="user__avatar"
-          src={userData && userData.avatar ? userData.avatar : user}
-          alt="user"
-        />
+        <div className="user__img">
+          <img
+            className="user__avatar"
+            src={userData && userData.avatar ? userData.avatar : user}
+            alt="user"
+          />
+        </div>
       </div>
     </header>
   );

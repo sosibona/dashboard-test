@@ -6,7 +6,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
-import Test from "./ErrorField";
+import ErrorField from "./ErrorField";
 
 const genderItemsRadio = [
   {
@@ -59,7 +59,7 @@ const RadioField = ({ label, name, className }) => {
       <Field name={name} as={InputRadio} label={label} className={className}>
         {RadioList}
       </Field>
-      <ErrorMessage name={name} component={Test} />
+      <ErrorMessage name={name} component={ErrorField} />
     </div>
   );
 };

@@ -46,10 +46,16 @@ body {
   }
 
   &__avatar {
+    max-width: 100%;
+  }
+
+  &__img {
     margin-left: 10px;
+    display: inline-block;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    overflow: hidden;
   }
 }
 
@@ -76,6 +82,8 @@ body {
 
   &__avatar {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__info {
@@ -83,19 +91,26 @@ body {
     flex-direction: column;
     padding: 20px;
   }
+
+  &__img {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
 }
 
 .form__user-avatar {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 10px;
+  max-width: 100%;
 }
 
 .btn {
   border: none;
   width: 200px;
   height: 40px;
-  background-color:#3fb580;
+  background-color: #3fb580;
   color: #fff;
   border-radius: 4px;
   text-transform: uppercase;

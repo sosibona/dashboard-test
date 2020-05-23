@@ -4,13 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Formik, Form, ErrorMessage } from "formik";
 import PropTypes from "prop-types";
 import * as Yup from "yup";
-import user from "./img/user_default.png";
+import user from "../img/user_default.png";
 import Button from "@material-ui/core/Button";
-import InputField from "./InputField";
-import SelectField from "./SelectField";
-import RadioField from "./RadioField";
-import ErrorField from "./ErrorField";
-import getUserInfo from "./user/user.actions";
+import InputField from "../fields/InputField";
+import SelectField from "../fields/SelectField";
+import RadioField from "../fields/RadioField";
+import ErrorField from "../fields/ErrorField";
+import getUserInfo from "./user.actions";
 
 const initialValues = {
   name: "",
@@ -93,11 +93,14 @@ const UserProfile = ({ getUserData }) => {
         <Form className="profile__form">
           <div className="profile__user-info">
             <div className="profile__avatar">
-              <img
-                className="form__user-avatar user"
-                src={avatarPreview || user}
-                alt="user_avatar"
-              />
+              <div className="profile__img">
+                <img
+                  className="form__user-avatar"
+                  src={avatarPreview || user}
+                  alt="user_avatar"
+                />
+              </div>
+
               <input
                 accept="image/*"
                 className={classes.uploadInput}
@@ -155,13 +158,6 @@ const UserProfile = ({ getUserData }) => {
                 name="gender"
                 className={classes.radioInput}
               />
-              {/* <Button
-                  className={classes.uploadButton}
-                  variant="contained"
-                  color="primary"
-                  component="span"
-                  type="submit"
-                >Save</Button> */}
               <button className="btn form-save" type="submit">
                 Save
               </button>

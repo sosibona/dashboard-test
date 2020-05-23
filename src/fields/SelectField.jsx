@@ -5,7 +5,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Test from "./ErrorField";
+import ErrorField from "./ErrorField";
 
 const positionItemsSelect = [
   {
@@ -61,7 +61,7 @@ const SelectField = ({ label, name, className }) => {
       <Field name={name} as={InputSelect} label={label} className={className}>
         {selectList}
       </Field>
-      <ErrorMessage name={name} component={Test} />
+      <ErrorMessage name={name} component={ErrorField} />
     </div>
   );
 };

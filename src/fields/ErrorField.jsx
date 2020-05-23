@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ErrorField = (props) => {
-  return <div className="error">{props.children}</div>;
+const ErrorField = ({ children }) => {
+  return <div className="error">{children}</div>;
 };
 
 ErrorField.propTypes = {
