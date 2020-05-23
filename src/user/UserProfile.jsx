@@ -6,11 +6,12 @@ import PropTypes from "prop-types";
 import * as Yup from "yup";
 import user from "../img/user_default.png";
 import Button from "@material-ui/core/Button";
-import InputField from "../fields/InputField";
-import SelectField from "../fields/SelectField";
-import RadioField from "../fields/RadioField";
-import ErrorField from "../fields/ErrorField";
+import InputField from "../fields/input/InputField";
+import SelectField from "../fields/select/SelectField";
+import RadioField from "../fields/radio/RadioField";
+import ErrorField from "../fields/error/ErrorField";
 import getUserInfo from "./user.actions";
+import "./profile.scss";
 
 const initialValues = {
   name: "",
@@ -95,12 +96,11 @@ const UserProfile = ({ getUserData }) => {
             <div className="profile__avatar">
               <div className="profile__img">
                 <img
-                  className="form__user-avatar"
+                  className="profile__user-avatar"
                   src={avatarPreview || user}
                   alt="user_avatar"
                 />
               </div>
-
               <input
                 accept="image/*"
                 className={classes.uploadInput}
@@ -158,7 +158,7 @@ const UserProfile = ({ getUserData }) => {
                 name="gender"
                 className={classes.radioInput}
               />
-              <button className="btn form-save" type="submit">
+              <button className="profile__btn-save" type="submit">
                 Save
               </button>
             </div>
