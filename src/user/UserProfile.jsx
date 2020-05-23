@@ -11,7 +11,7 @@ import RadioField from "../fields/radio/RadioField";
 import ErrorField from "../fields/error/ErrorField";
 import getUserInfo from "./user.actions";
 import PropTypes from "prop-types";
-import './profile.scss';
+import "./profile.scss";
 
 const initialValues = {
   name: "",
