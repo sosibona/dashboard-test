@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "./header/Header";
-import UserProfile from "./user/UserProfile";
+import Header from "../header/Header";
+import UserProfile from "../user/UserProfile";
+import "./dashboard.scss";
 
 const Profile = () => {
   return (

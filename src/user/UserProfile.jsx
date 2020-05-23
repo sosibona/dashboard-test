@@ -34,6 +34,10 @@ const useStyles = makeStyles(() => ({
     marginBottom: "20px",
     width: "200px",
     outline: "none",
+
+    "&:firstChild": {
+      marginTop: "0",
+    },
   },
   uploadInput: {
     display: "none",

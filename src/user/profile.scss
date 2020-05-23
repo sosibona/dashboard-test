@@ -28,10 +28,11 @@
   &__img {
     margin: 0 auto;
     margin-bottom: 10px;
-    display: inline-block;
+    display: flex;
     width: 200px;
     height: 200px;
     overflow: hidden;
+    align-items: center;
   }
 
   &__user-avatar {
