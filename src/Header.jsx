@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import user from "./img/user_default.png";
 
@@ -25,8 +25,8 @@ const mapState = (state) => {
 };
 
 Header.propTypes = {
-  userData: PropTypes.object
-}
+  userData: PropTypes.object,
+};
 
 Header.defaultProps = {
   userData: null,

@@ -1,7 +1,7 @@
-import React from 'react';
-import Profile from './Profile';
-import { Provider } from 'react-redux'
-import store from './store';
+import React from "react";
+import Profile from "./Profile";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (

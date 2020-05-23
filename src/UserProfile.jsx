@@ -28,7 +28,7 @@ const validationSchema = Yup.object({
   age: Yup.number("Invalid type").required("Required"),
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   input: {
     marginBottom: "20px",
     width: "200px",
@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
   },
   radioInput: {
     flexDirection: "row",
-    color: 'rgba(0, 0, 0, 0.54)',
+    color: "rgba(0, 0, 0, 0.54)",
 
     "&:checked": {
-      color: '#3fb580',
-    }
+      color: "#3fb580",
+    },
   },
   uploadButton: {
     border: "none",
@@ -62,7 +62,7 @@ const UserProfile = ({ getUserData }) => {
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState("");
 
-  const onSubmit = (values, event) => {
+  const onSubmit = (values) => {
     const userData = {
       ...values,
       avatar,

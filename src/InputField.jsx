@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Field, ErrorMessage } from "formik";
 import TextField from "@material-ui/core/TextField";
 import Test from "./ErrorField";
@@ -18,6 +19,13 @@ const InputField = ({ label, name, type, className }) => {
       <ErrorMessage name={name} component={Test} />
     </div>
   );
+};
+
+InputField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default InputField;

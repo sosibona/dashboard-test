@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Field, ErrorMessage } from "formik";
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
 import Test from "./ErrorField";
 
 const genderItemsRadio = [
@@ -18,7 +19,15 @@ const genderItemsRadio = [
   },
 ];
 
-const InputRadio = ({value, onChange, onBlur, className, name, children, label}) => {
+const InputRadio = ({
+  value,
+  onChange,
+  onBlur,
+  className,
+  name,
+  children,
+  label,
+}) => {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">{label}</FormLabel>
@@ -38,21 +47,37 @@ const InputRadio = ({value, onChange, onBlur, className, name, children, label})
 
 const RadioField = ({ label, name, className }) => {
   const RadioList = genderItemsRadio.map((item) => (
-    <FormControlLabel key={item.value} value={item.value} control={<Radio />} label={item.label} />
+    <FormControlLabel
+      key={item.value}
+      value={item.value}
+      control={<Radio />}
+      label={item.label}
+    />
   ));
   return (
     <div>
-      <Field
-        name={name}
-        as={InputRadio}
-        label={label}
-        className={className}
-      >
+      <Field name={name} as={InputRadio} label={label} className={className}>
         {RadioList}
       </Field>
       <ErrorMessage name={name} component={Test} />
     </div>
   );
+};
+
+InputRadio.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
+RadioField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default RadioField;

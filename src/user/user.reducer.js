@@ -1,8 +1,8 @@
-import { GET_USER_INFO } from "./user.actions"
+import { GET_USER_INFO } from "./user.actions";
 
 const initialState = {
   userData: null,
-}
+};
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -10,11 +10,11 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         userData: action.payload.userData,
-      }
+      };
     }
-    default: 
-    return state;
+    default:
+      return state;
   }
-}
+};
 
 export default userReducer;

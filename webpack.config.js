@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PrettierPlugin = require("prettier-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
@@ -35,6 +36,14 @@ module.exports = (env, argv) => {
       ]
     },
     plugins: [
+      new PrettierPlugin({
+        printWidth: 80,             
+        tabWidth: 2,                
+        useTabs: false,             
+        semi: true,                 
+        encoding: 'utf-8',          
+        extensions: [ ".js", ".jsx" ]
+      }),
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({

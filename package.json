@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --devtool eval-source-maps --open",
+    "test": "eslint --ignore-path .gitignore .",
     "build": "webpack -p"
   },
   "keywords": [],
@@ -19,6 +20,8 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
+    "eslint": "^7.1.0",
+    "eslint-plugin-react": "^7.20.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.0.1",
     "mini-css-extract-plugin": "^0.9.0",
@@ -35,6 +38,7 @@
     "@material-ui/core": "^4.9.14",
     "core-js": "^3.6.4",
     "formik": "^2.1.4",
+    "prettier-webpack-plugin": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
