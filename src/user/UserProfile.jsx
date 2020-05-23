@@ -5,14 +5,12 @@ import { Formik, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import user from "../img/user_default.png";
 import Button from "@material-ui/core/Button";
-// import InputField from "../fields/input/InputField";
 import InputField from "../fields/input/InputField";
 import SelectField from "../fields/select/SelectField";
 import RadioField from "../fields/radio/RadioField";
 import ErrorField from "../fields/error/ErrorField";
 import getUserInfo from "./user.actions";
 import PropTypes from "prop-types";
-import "./profile.scss";
 
 const initialValues = {
   name: "",

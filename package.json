@@ -7,7 +7,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "test": "eslint --ignore-path .gitignore .",
+    "test": "eslint src",
     "start": "webpack-dev-server -d --devtool eval-source-maps --open",
     "build": "webpack -p"
   },
