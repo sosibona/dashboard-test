@@ -73,7 +73,6 @@ const UserProfile = ({ setUserData }) => {
         ...values,
         avatar,
       };
-      console.log(userData);
       setUserData(userData);
     },
     [avatar]
