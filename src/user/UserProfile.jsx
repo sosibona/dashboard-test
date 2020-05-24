@@ -90,7 +90,7 @@ const UserProfile = ({ setUserData }) => {
     };
 
     reader.readAsDataURL(file);
-  });
+  }, []);
 
   return (
     <div className="profile">
