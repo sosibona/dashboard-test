@@ -67,30 +67,32 @@ const UserProfile = ({ setUserData }) => {
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState("");
 
-  const onSubmit = useCallback((values) => {
-    const userData = {
-      ...values,
-      avatar,
-    };
-    setUserData(userData);
-  });
-
-  const handleImageChange = useCallback(
-    (event) => {
-      event.preventDefault();
-
-      let reader = new FileReader();
-      let file = event.target.files[0];
-
-      reader.onloadend = () => {
-        setAvatar(URL.createObjectURL(file));
-        setAvatarPreview(reader.result);
+  const onSubmit = useCallback(
+    (values) => {
+      const userData = {
+        ...values,
+        avatar,
       };
-
-      reader.readAsDataURL(file);
+      console.log(userData);
+      setUserData(userData);
     },
-    [setAvatar, setAvatarPreview]
+    [avatar]
   );
+
+  const handleImageChange = useCallback((event) => {
+    event.preventDefault();
+
+    let reader = new FileReader();
+    let file = event.target.files[0];
+
+    reader.onloadend = () => {
+      const fileUrl = URL.createObjectURL(file)
+      setAvatar(fileUrl);
+      setAvatarPreview(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  });
 
   return (
     <div className="profile">
