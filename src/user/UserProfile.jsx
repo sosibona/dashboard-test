@@ -86,8 +86,7 @@ const UserProfile = ({ setUserData }) => {
     let file = event.target.files[0];
 
     reader.onloadend = () => {
-      const fileUrl = URL.createObjectURL(file)
-      setAvatar(fileUrl);
+      setAvatar(URL.createObjectURL(file));
       setAvatarPreview(reader.result);
     };
 
