@@ -1,12 +1,12 @@
-export const GET_USER_INFO = "GET_USER_INFO";
+export const SET_USER_INFO = "SET_USER_INFO";
 
-const getUserInfo = (userData) => {
+const setUserInfo = (userData) => {
   return {
-    type: GET_USER_INFO,
+    type: SET_USER_INFO,
     payload: {
       userData,
     },
   };
 };
 
-export default getUserInfo;
+export default setUserInfo;

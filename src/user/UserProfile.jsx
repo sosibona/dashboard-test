@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import { Formik, Form, ErrorMessage } from "formik";
+import setUserInfo from "./user.actions";
 import * as Yup from "yup";
 import user from "../img/user_default.png";
 import Button from "@material-ui/core/Button";
@@ -9,7 +10,6 @@ import InputField from "../fields/input/InputField";
 import SelectField from "../fields/select/SelectField";
 import RadioField from "../fields/radio/RadioField";
 import ErrorField from "../fields/error/ErrorField";
-import getUserInfo from "./user.actions";
 import PropTypes from "prop-types";
 import "./profile.scss";
 
@@ -62,32 +62,36 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const UserProfile = ({ getUserData }) => {
+const UserProfile = ({ setUserData }) => {
   const classes = useStyles();
   const [avatar, setAvatar] = useState("");
   const [avatarPreview, setAvatarPreview] = useState("");
 
-  const onSubmit = (values) => {
+  const onSubmit = useCallback((values) => {
     const userData = {
       ...values,
       avatar,
     };
-    getUserData(userData);
-  };
+    setUserData(userData);
+  });
 
-  const handleImageChange = (event) => {
-    event.preventDefault();
+  const handleImageChange = useCallback(
+    (event) => {
+      event.preventDefault();
 
-    let reader = new FileReader();
-    let file = event.target.files[0];
+      let reader = new FileReader();
+      let file = event.target.files[0];
 
-    reader.onloadend = () => {
-      setAvatar(URL.createObjectURL(file));
-      setAvatarPreview(reader.result);
-    };
+      reader.onloadend = () => {
+        setAvatar(URL.createObjectURL(file));
+        setAvatarPreview(reader.result);
+      };
 
-    reader.readAsDataURL(file);
-  };
+      reader.readAsDataURL(file);
+    },
+    [setAvatar, setAvatarPreview]
+  );
+
   return (
     <div className="profile">
       <Formik
@@ -174,11 +178,11 @@ const UserProfile = ({ getUserData }) => {
 };
 
 const mapDispatch = {
-  getUserData: getUserInfo,
+  setUserData: setUserInfo,
 };
 
 UserProfile.propTypes = {
-  getUserData: PropTypes.func.isRequired,
+  setUserData: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatch)(UserProfile);
