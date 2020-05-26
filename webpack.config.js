@@ -47,7 +47,8 @@ module.exports = (env, argv) => {
       new webpack.ProgressPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: "./src/index.html"
+        template: "./src/index.html",
+        favicon: "./src/img/profile.jpg",
       })
     ],
     resolve: {
